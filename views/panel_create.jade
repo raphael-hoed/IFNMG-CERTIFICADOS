@@ -1,0 +1,39 @@
+//Arquivo modificado. Os arquivos base podem ser encontrados em: https://github.com/IBM-Blockchain/marbles
+
+#createPanel(hidden).panel
+    
+	h3 Cadastre os dados do aluno que colou grau 
+	hr
+	
+	#innerWrap
+		
+		
+		form(action="/create" method="POST")#createform
+			legend Número de CPF do Aluno
+				input(type="text" name="cpf")
+		
+			
+			br
+			
+						
+			legend Nome do Aluno
+				input(type="text" name="nome")
+				
+			br
+			legend Escolha o Curso do Formando
+				select(name="curso")
+					option(value="BADM") Bacharelado em Administração
+					option(value="BAGRO") Bacharelado em Agronomia
+					option(value="BSI") Bacharelado em Sistemas de Informação
+					option(value="TGA") Tecnologia em Gestão Ambiental
+					option(value="TPG") Tecnologia em Produção de Grãos
+					
+			br
+			legend Data da Colação de Grau: 
+				input(type="date" name="user")
+					
+			button(type="button")#submit
+				span.fa.fa-check &nbsp;&nbsp;
+				span Armazenar no Blockchain
+			
+			
