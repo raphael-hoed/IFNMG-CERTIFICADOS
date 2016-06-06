@@ -32,6 +32,6 @@ Siga os passos abaixo antes de rodar sua aplicação de cadastro de certificados
 - Se tudo der certo você verá uma mensagem:
         > ------------------------------------------ Websocket Up ------------------------------------------
 - Para abrir a aplicação, vá até o seu browser e digite: localhost:3000		
-- No menu CADASTRAR CERTIFICADO você poderá cadastrar os dados do aluno diplomado. 
+- No menu CREATE você poderá cadastrar os dados do aluno diplomado. 
 - No canto inferior esquerdo você poderá ver as transações armazenadas no blockchain. Após fazer um cadastro, pode ser necessário aguardar um tempo até que o pedido de cadastro recém feito seja armazenado no Blockchain (normalmente menos de um minuto). Caso o cadastro feito não esteja aparecendo, atualize a sua página com F5
 
