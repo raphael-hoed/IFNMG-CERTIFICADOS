@@ -7,7 +7,7 @@ Siga os passos abaixo antes de rodar sua aplicação de cadastro de certificados
         > git clone https://github.com/raphael-hoed/IFNMG-CERTIFICADOS
 
 - Para rodar sua aplicação você precisará do NPM, Node.js, GoLang Environment (disponível para download em https://golang.org/dl/). Certifique-se de tê-los instalados antes de rodar a aplicação.
-- Abra o ser terminal de comandos. 
+- Abra o seu terminal de comandos. 
 - Navegue até o diretório raiz da sua aplicação de Certificados IFNMG e rode o comando: 
 
         > npm install gulp
