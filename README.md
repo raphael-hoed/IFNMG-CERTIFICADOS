@@ -34,7 +34,9 @@ Siga os passos abaixo antes de rodar sua aplicação de cadastro de certificados
 
 ##USANDO O APLICATIVO
 - Após os passos acima e instalação dos módulos requeridos, você poderá rodar a sua aplicação com o comando:
+
         > node app.js
+
 - Se tudo der certo você verá uma mensagem:
         > ------------------------------------------ Websocket Up ------------------------------------------
 - Para abrir a aplicação, vá até o seu browser e digite: localhost:3000		
