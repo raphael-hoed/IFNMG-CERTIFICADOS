@@ -22,6 +22,7 @@ Siga os passos abaixo antes de rodar sua aplicação de cadastro de certificados
 		> npm install async
 		> npm install ws
 		> npm install ibm-blockchain-js
+		> npm install morgan
 		
 ***
 
