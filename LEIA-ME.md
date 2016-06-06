@@ -6,9 +6,13 @@ Siga os passos abaixo antes de rodar sua aplicação de cadastro de certificados
 - Para rodar sua aplicação você precisará do NPM e Node.js. Certifique-se de tê-los instalados antes de rodar a aplicação.
 - Abra o ser terminal de comandos. 
 - Navegue até o diretório raiz da sua aplicação de Certificados IFNMG e rode o comando: 
+
         > npm install gulp
+        
 - Você poderá rodar a sua aplicação com o comando:
+
         > node app.js
+        
 - Ao rodar o comando acima, uma mensagem de erro pode ser retornada requerindo alguns módulos. Nesse caso, instale os módulos a seguir:
 
         > npm install express
