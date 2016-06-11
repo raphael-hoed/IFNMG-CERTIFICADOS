@@ -1,23 +1,32 @@
 //Arquivo modificado. Os arquivos base podem ser encontrados em: https://github.com/IBM-Blockchain/marbles
 
+script(type='/js/util/cpf.js')
+
+
+
 #createPanel(hidden).panel
     
 	h3 Cadastre os dados do aluno que colou grau 
-	hr
 	
+	hr
+	br
+	br
 	#innerWrap
+		#trashbin <img src="/imgs/modelo_diploma.png" alt="Diploma">
 		
+		br
+		br
 		
 		form(action="/create" method="POST")#createform
-			legend Número de CPF do Aluno
-				input(type="text" name="cpf")
+			legend Número de CPF do Aluno  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				input(type="text" name="cpf" id="cpf" placeholder="apenas números" maxlength="11" required) 
 		
 			
 			br
 			
 						
-			legend Nome do Aluno
-				input(type="text" name="nome")
+			legend Nome do Aluno  &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				input(type="text" name="nome" placeholder="preenchimento obrigatório" required)
 				
 			br
 			legend Escolha o Curso do Formando
@@ -29,11 +38,15 @@
 					option(value="TPG") Tecnologia em Produção de Grãos
 					
 			br
-			legend Data da Colação de Grau: 
+			legend Data da Colação de Grau:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				input(type="date" name="user")
-					
+				
+				br
+				br
+				br
+						
 			button(type="button")#submit
-				span.fa.fa-check &nbsp;&nbsp;
+				
 				span Armazenar no Blockchain
 			
 			

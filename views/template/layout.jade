@@ -10,7 +10,7 @@ mixin debug(variable)
 -////////////////////////////////////////////////// HTML //////////////////////////////////////////////////
 -//Begin HTML
 doctype html
-html
+html 
 	//Built by: Me
 	//ETI Labs
 	//Copyright 2016  - IBM
@@ -26,6 +26,7 @@ html
 		script(src='/js/funk.js')
 		script(src='/js/blockchain.js')
 		script(type='text/javascript').
+		
 			var bag = !{JSON.stringify(bag)};						//throw jade json over to JS
 			console.log('bag', bag);
 			$(document).ready(function(){
@@ -92,7 +93,7 @@ html
 			});
 		block custom_header
 		
-		body
+		body 
 			#navPanel
 				block navpanel
 			

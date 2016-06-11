@@ -16,6 +16,7 @@ $(document).on('ready', function() {
 	// =================================================================================
 	$('#submit').click(function(){
 		console.log('creating marble');
+		
 		var obj = 	{
 						type: 'create',
 						cpf: $('input[name="cpf"]').val().replace('', ' | '),
@@ -24,7 +25,7 @@ $(document).on('ready', function() {
 						user: $('input[name="user"]').val().replace('', ' | '),
 						v: 1
 					};
-		if(obj.user && obj.cpf && obj.nome){
+		if(obj.user!=' | ' && obj.cpf!=' | ' && obj.nome!=' | ' && obj.user!='dd/mm/aaaa'){
 			console.log('creating marble, sending', obj);
 			ws.send(JSON.stringify(obj));
 			showHomePanel();
@@ -128,7 +129,7 @@ function connect_to_server(){
 	function onMessage(msg){
 		try{
 			var data = JSON.parse(msg.data);
-			if(data.v != '2'){
+			if(data.v != '3'){
 				console.log('rec', data.msg, data);
 				if(data.marble){
 					build_ball(data.marble);
@@ -151,11 +152,10 @@ function connect_to_server(){
 
 	function onError(evt){
 		console.log('ERROR ', evt);
-		if(!connected && bag.e == null){											//don't overwrite an error message
-			$('#errorName').html('Warning');
-			$('#errorNoticeText').html('Waiting on the node server to open up so we can talk to the blockchain. ');
-			$('#errorNoticeText').append('This app is likely still starting up. ');
-			$('#errorNoticeText').append('Check the server logs if this message does not go away in 1 minute. ');
+		if(!connected && bag.e == null){											
+			$('#errorName').html('ATENÇÃO!!!');
+			$('#errorNoticeText').html('Aguarde até que o servidor node se conecte ao blockchain!');
+			$('#errorNoticeText').append('Verifique os logs do servidor se esta mensagem não desaparecer em 1 minuto!');
 			$('#errorNotificationPanel').fadeIn();
 		}
 	}

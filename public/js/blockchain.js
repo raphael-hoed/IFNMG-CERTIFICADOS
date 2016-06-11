@@ -30,14 +30,15 @@ function show_details(event, id){								//build the block details html
 	var ccid = formatCCID(blocks[id].blockstats.transactions[0].type, blocks[id].blockstats.transactions[0].uuid, atob(blocks[id].blockstats.transactions[0].chaincodeID));
 	var payload = atob(blocks[id].blockstats.transactions[0].payload);
 
-	var html = '<p class="blckLegend"> Block Height: ' + blocks[id].id + '</p>';
-	html += '<hr class="line"/><p>Data da Transação: &nbsp;' + formatDate(blocks[id].blockstats.transactions[0].timestamp.seconds * 1000, '%d-%M-%Y %I:%m%p') + ' UTC</p>';
-	html += '<p> UUID: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + formatUUID(blocks[id].blockstats.transactions[0].type, blocks[id].blockstats.transactions[0].uuid) + '</p>';
-	html += '<p> Type:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + formatType(blocks[id].blockstats.transactions[0].type) + '</p>';
-	html += '<p> ChainCode ID:  &nbsp;&nbsp;&nbsp;&nbsp;' + ccid + '</p>';
-	html += '<p> Payload:  &nbsp;' + formatPayload(payload, ccid) + '</p>';
+	var html = '<p class="blckLegend"> Número do Registro: ' + blocks[id].id + '</p>';
+	html += '<hr class="line"/><p>Data da Transação: &nbsp;' + formatDate(blocks[id].blockstats.transactions[0].timestamp.seconds * 1000, '%M-%d-%Y %I:%m%p') + ' UTC</p>';
+	html += '<p> ID da Transação: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + formatUUID(blocks[id].blockstats.transactions[0].type, blocks[id].blockstats.transactions[0].uuid) + '</p>';
+	html += '<p> Tipo:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + formatType(blocks[id].blockstats.transactions[0].type) + '</p>';
+	html += '<p> Dados do Certificado:  &nbsp;' + formatPayload(payload, ccid) + '</p>';
 	$('#details').html(html).css('left', left).fadeIn();
 }
+
+
 
 function new_block(newblck){									//rec a new block
 	if(!blocks[Number(newblck.id)]){
@@ -49,6 +50,8 @@ function new_block(newblck){									//rec a new block
 			for(var i=last; i < Number(newblck.id); i++){		//build fake blocks for ones we missed out on
 				console.log('run?');
 				blocks[Number(i)] = newblck;
+				
+				
 				build_block(i);
 			}
 		}
@@ -58,13 +61,26 @@ function new_block(newblck){									//rec a new block
 }
 
 function build_block(id){										//build and append the block html
-	$('#blockWrap').append('<div class="block">' +  nDig(id, 3) + '</div>');
+	$('#blockWrap').append('<div class="block">' +  nDig(id, 4) + '</div>');
 	$('.block:last').animate({opacity: 1, left: (block * 36)}, 600, function(){
 		$('.lastblock').removeClass('lastblock');
 		$('.block:last').addClass('lastblock');
 	});
+	
+	//Código inserido para remoção de transação do tipo Deploy
+	if (formatType(blocks[id].blockstats.transactions[0].type==1))
+	
+	{
+		$('.block:last').remove();
+		block--;
+		}
+	
 	block++;
 }
+
+
+
+
 
 function move_on_down(){										//move the blocks left
 	if(block > 10){
@@ -93,7 +109,7 @@ function formatUUID(i, uuid){									//blank uuid if deploy, its just ccid agai
 
 function formatType(i){											//spell out deploy or invoke
 	if(i == 1) return 'deploy';
-	if(i == 3) return 'invoke';
+	if(i == 2) return 'Certificado';
 	return i;
 }
 
@@ -107,3 +123,4 @@ function formatPayload(str, ccid){								//create a sllliiiggghhhtttlllllyyy be
 	}
 	return str;
 }
+
