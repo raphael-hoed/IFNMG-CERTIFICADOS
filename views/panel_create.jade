@@ -7,19 +7,19 @@ script(type='/js/util/cpf.js')
 #createPanel(hidden).panel
     
 	h3 Cadastre os dados do aluno que colou grau 
-	
+	h4 (Todos os campos são de preenchimento obrigatório)
 	hr
 	br
 	br
 	#innerWrap
-		#trashbin <img src="/imgs/modelo_diploma.png" alt="Diploma">
+		#trashbin <img src="/imgs/modelo_diploma.png" alt="Diploma" class="area_print1">
 		
 		br
 		br
 		
 		form(action="/create" method="POST")#createform
-			legend Número de CPF do Aluno  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				input(type="text" name="cpf" id="cpf" placeholder="apenas números" maxlength="11" required) 
+			legend Número de Matrícula do Aluno  
+				input(type="text" name="cpf" id="cpf" placeholder="preenchimento obrigatório" required) 
 		
 			
 			br

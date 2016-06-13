@@ -515,7 +515,9 @@ label {
 
 #blockWrap {
   position: relative;
-  margin: 15px 25px; }
+  margin: 15px 25px; 
+  
+  }
 
 .block {
   line-height: 30px;
@@ -810,3 +812,47 @@ button:disabled, .inactiveButton {
   /* Nav Links */
   #description {
     position: initial; } }
+
+@media print {
+    body * {
+        background: none    !important;
+		visibility: hidden  !important;
+        position:   static  !important;
+    }
+    .area_print1, .area_print1 * {
+        visibility: visible !important;
+    }
+	
+	.area_print2, .area_print2 * {
+        visibility: visible !important;
+    }
+	
+    .area_print1 {
+        position: absolute !important;
+        left:     300px   !important;
+        top:      0        !important;
+        width:    auto     !important;
+        height:   auto     !important;
+        margin:   0        !important;
+        padding:  0        !important;
+		text-align: center !important;
+    }
+	
+	.area_print2 {
+        position: absolute !important;
+        left:     0        !important;
+        top:      300px       !important;
+        width:    auto     !important;
+        height:   auto     !important;
+        margin:   auto        !important;
+        padding:  auto        !important;
+		text-align: center !important;
+		font-size: 130%   !important;
+		font-weight: bold !important;
+    }
+	#imprimir{
+	    visibility: hidden  !important;
+	
+	
+	}
+}

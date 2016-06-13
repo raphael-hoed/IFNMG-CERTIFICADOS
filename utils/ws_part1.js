@@ -83,7 +83,7 @@ module.exports.process_msg = function(ws, data){
 			var list = [];
 			for(var i = stats.height - 1; i >= 1; i--){									//create a list of heights we need
 				list.push(i);
-				if(list.length >= 8) break;
+				
 			}
 			list.reverse();																//flip it so order is correct in UI
 			console.log(list);
