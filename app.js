@@ -126,7 +126,7 @@ require('cf-deployment-tracker-client').track();		//reports back to us, this hel
 // 														Test Area
 // ============================================================================================================================
 var part1 = require('./utils/ws_part1');
-var part2 = require('./utils/ws_part2');
+
 var ws = require('ws');
 var wss = {};
 var Ibc1 = require('ibm-blockchain-js');
@@ -379,7 +379,7 @@ function cb_ready(err, cc){																	//response has chaincode functions
 	else{
 		chaincode = cc;
 		part1.setup(ibc, cc);
-		part2.setup(ibc, cc);
+		
 		if(!cc.details.deployed_name || cc.details.deployed_name === ''){					//decide if i need to deploy
 			cc.deploy('init', ['99'], {save_path: './cc_summaries', delay_ms: 50000}, cb_deployed);
 		}
@@ -409,7 +409,7 @@ function cb_deployed(e, d){
 				try{
 					var data = JSON.parse(message);
 					part1.process_msg(ws, data);
-					part2.process_msg(ws, data);
+					
 				}
 				catch(e){
 					console.log('ws message error', e);

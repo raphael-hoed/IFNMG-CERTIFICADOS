@@ -850,9 +850,18 @@ button:disabled, .inactiveButton {
 		font-size: 130%   !important;
 		font-weight: bold !important;
     }
+	
+	
+	
 	#imprimir{
 	    visibility: hidden  !important;
 	
 	
 	}
+}
+
+.instrucoesIniciais{
+    font-size: 18px;
+	color: white;
+    line-height: 2.0
 }
