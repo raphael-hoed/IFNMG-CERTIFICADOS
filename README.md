@@ -10,13 +10,8 @@ Siga os passos abaixo antes de rodar sua aplicação de cadastro de certificados
 - Abra o seu terminal de comandos. 
 - Navegue até o diretório raiz da sua aplicação de Certificados IFNMG e rode o comando: 
 
-        > npm install gulp
+        > npm install
         
-
-- Em seguida instale os módulos a seguir, com o comando abaixo:
-
-        > npm install express && npm install express-session && npm install compression && npm install serve-static && npm install path && npm install cookie-parser && npm install body-parser && npm install cors && npm install jade && npm install cf-deployment-tracker-client && npm install async && npm install ws && npm install ibm-blockchain-js && npm install morgan
-
 ***
 
 ##USANDO O APLICATIVO
