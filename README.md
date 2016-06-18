@@ -6,7 +6,7 @@ Siga os passos abaixo antes de rodar sua aplicação de cadastro de certificados
 
         > git clone https://github.com/raphael-hoed/IFNMG-CERTIFICADOS
 
-- Para rodar sua aplicação você precisará do NPM, Node.js, GoLang Environment (disponível para download em https://golang.org/dl/). Certifique-se de tê-los instalados antes de prosseguir. Se você estiver usando o sistema operacional Windows, você pode instalar o Cygwin  para usar o comando npm.
+- Para rodar sua aplicação você precisará do NPM e do Node.js. Certifique-se de tê-los instalados antes de prosseguir. Se você estiver usando o sistema operacional Windows, você pode instalar o Cygwin  para usar o comando npm.
 - Abra o seu terminal de comandos. 
 - Navegue até o diretório raiz da sua aplicação de Certificados IFNMG e rode o comando: 
 
