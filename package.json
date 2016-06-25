@@ -1,7 +1,7 @@
 {
-  "name": "marbles",
+  "name": "IFNMG-CERTIFICADOS",
   "version": "0.0.1",
-  "description": "A Node.js web application that demonstrates utilizing IBM Blockchain JS to call REST APIs on the blockchain.",
+  "description": "Uma aplicação para salvar certificados no Blockchain",
   "main": "app.js",
   "scripts": {
     "start": "node app.js"
